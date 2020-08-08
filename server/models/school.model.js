@@ -11,14 +11,34 @@ const schoolSchema = new Schema({
         type: String,
         required: true,
     },
-    code: {
+    city: {
         type: String,
         required: true,
+    },
+    state: {
+        type: String,
+        required: true,
+    },
+    board: {
+        type: String,
+        required: true,
+    },
+    totalTeachers: {
+        type: Number,
+        required: true,
+    },
+    totalStudents: {
+        type: Number,
+        required: true,
+    },
+    regDate: {
+        type: Date,
+        default: Date.now()
     },
 }, {
     timestamps: true,
 });
 
-const Board = mongoose.model('Board', boardSchema);
+const School = mongoose.model('School', schoolSchema);
 
-module.exports = Board;
+module.exports = School;
