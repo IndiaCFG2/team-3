@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const analyticsSchema = new Schema({
+const analyticSchema = new Schema({
     school: {
         type: String,
         required: true,
@@ -23,6 +23,6 @@ const analyticsSchema = new Schema({
     timestamps: true,
 });
 
-const Analytics = mongoose.model('Analytics', AnalyticsSchema);
+const Analytic = mongoose.model('Analytic', AnalyticSchema);
 
-module.exports = Analytics;
+module.exports = Analytic;
