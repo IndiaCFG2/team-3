@@ -3,6 +3,7 @@
     <h1>{{subject}}</h1><h2>{{grade}}</h2>
     <hr style="display: inline-block;">
 <div *ngFor="let lesson of lessons">
+<<<<<<< HEAD
     <div class="card">
         <button >{{lesson.name}}</button>
         <div class="cart-body">
@@ -12,6 +13,21 @@
             <h6>Videos</h6>
             <button style=" border: #000; " onclick="#" class="btn btn-outline-success my-2 my-sm-0" type="button"><i class="fab fa-whatsapp" style="font-size: 50px;" ></i></button>
             <button style=" border:#000; " onclick="#" class="btn btn-outline-success my-2 my-sm-0" type="button"><i class="fab fa-images" style="font-size: 50px;" ></i></button>
+=======
+    <div class="card hoverable">
+        <div class="text-center">
+            <img [src]="lesson.fileURL" height="150" width="150" alt="image">
+
+        </div>
+        <button >{{lesson.name}}</button>
+        <div class="card-body">
+            <h6>Images and PPT's</h6>
+            <button style=" border: #000; "  class="btn btn-outline-success my-2 my-sm-0" type="button"><i class="fab fa-whatsapp" style="font-size: 50px;" ></i></button>
+            <button style=" border: #000; "  class="btn btn-outline-success my-2 my-sm-0" type="button"><i class="fab fa-images" style="font-size: 50px;" ></i></button>
+            <h6>Videos</h6>
+            <button style=" border: #000; "  class="btn btn-outline-success my-2 my-sm-0" type="button"><i class="fab fa-whatsapp" style="font-size: 50px;" ></i></button>
+            <button style=" border:#000; "  class="btn btn-outline-success my-2 my-sm-0" type="button"><i class="fab fa-images" style="font-size: 50px;" ></i></button>
+>>>>>>> 2f6e173737183d45879c1ca9e12cd2e0d299c18e
 
         </div>
     </div>

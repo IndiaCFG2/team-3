@@ -1,0 +1,20 @@
+#footer-area{
+    background-color:black;
+    color:white;
+    position: relative;
+   left: 0;
+   bottom: 0;
+   
+   width: 100%;
+   text-align:center;
+}
+
+.navbar{
+    background-color:black;
+    color:white;
+    position: relative;
+   left: 0;
+   top: 0;
+   width: 100%;
+   text-align:center;
+}

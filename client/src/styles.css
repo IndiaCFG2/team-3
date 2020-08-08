@@ -1,2 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+<<<<<<< HEAD
 @import "~bootstrap/dist/css/bootstrap.css"
+=======
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+mat-card{
+    width: 80%;
+    margin: auto;
+}
+
+textarea, mat-form-field{
+    width: 100%;
+}
+>>>>>>> 2f6e173737183d45879c1ca9e12cd2e0d299c18e
