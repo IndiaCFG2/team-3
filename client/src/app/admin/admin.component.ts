@@ -56,6 +56,7 @@ export class AdminComponent implements OnInit {
         this.isLoading = true;
         obj = {
           ...Form.value,
+          views: 0,
           
           timestamp: timestamp
         }
@@ -83,7 +84,8 @@ export class AdminComponent implements OnInit {
         const timestamp = Date.now();
         obj = {
           ...Form.value,
-          timestamp: timestamp
+          timestamp: timestamp,
+          views: 0,
         }
         console.log("obj=", obj);
         this.isLoading = true

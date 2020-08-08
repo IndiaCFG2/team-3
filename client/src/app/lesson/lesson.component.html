@@ -4,18 +4,15 @@
     <hr style="display: inline-block;">
 <div *ngFor="let lesson of lessons">
     <div class="card hoverable">
-        <div class="text-center">
-            <img [src]="lesson.fileURL" height="150" width="150" alt="image">
-
-        </div>
+        
         <button >{{lesson.name}}</button>
         <div class="card-body">
             <h6>Images and PPT's</h6>
-            <button style=" border: #000; "  class="btn btn-outline-success my-2 my-sm-0" type="button"><i class="fab fa-whatsapp" style="font-size: 50px;" ></i></button>
-            <button style=" border: #000; "  class="btn btn-outline-success my-2 my-sm-0" type="button"><i class="fab fa-images" style="font-size: 50px;" ></i></button>
+            <button style=" border: #000; "  class="btn btn-outline-success my-2 my-sm-0" (click)="showmodal(lesson.fileURL)"  type="button"><i class="fa fa-whatsapp" style="font-size: 50px;" ></i>Share</button>
+            <button style=" border: #000; "  class="btn btn-outline-success my-2 my-sm-0" type="button"><i class="fa fa-images" style="font-size: 50px;" ></i> <a style="text-decoration: none;" target="_blank" [href]="lesson.fileURL">View</a> </button>
             <h6>Videos</h6>
-            <button style=" border: #000; "  class="btn btn-outline-success my-2 my-sm-0" type="button"><i class="fab fa-whatsapp" style="font-size: 50px;" ></i></button>
-            <button style=" border:#000; "  class="btn btn-outline-success my-2 my-sm-0" type="button"><i class="fab fa-images" style="font-size: 50px;" ></i></button>
+            <button style=" border: #000; "  class="btn btn-outline-success my-2 my-sm-0" (click)="showmodal(lesson.fileURL)"  type="button"><i class="fa fa-whatsapp"  style="font-size: 50px;" ></i>Share</button>
+            <button style=" border:#000; "  class="btn btn-outline-success my-2 my-sm-0" type="button"><i class="fa fa-images" style="font-size: 50px;" ></i>View</button>
 
         </div>
     </div>

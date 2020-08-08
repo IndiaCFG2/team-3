@@ -8,6 +8,12 @@ import {AdminModule} from './admin/admin.module'
 import {AngularFireModule} from 'angularfire2';
 import { SchoolPagesComponent } from './school-pages/school-pages.component';
 import { LessonComponent } from './lesson/lesson.component'
+import { HighchartsChartModule } from 'highcharts-angular';
+import { ViewdetailedComponent } from './viewdetailed/viewdetailed.component';
+import { ModalComponent } from './modal/modal.component'
+import {MatDialogModule} from '@angular/material'
+import { MatButtonModule, MatCardModule, MatInputModule, MatProgressSpinnerModule, MatProgressBarModule } from '@angular/material';
+
 
 
 
@@ -16,16 +22,21 @@ import { LessonComponent } from './lesson/lesson.component'
   declarations: [
     AppComponent,
     SchoolPagesComponent,
-    LessonComponent
+    LessonComponent,
+    ViewdetailedComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AdminModule,
+    MatDialogModule,
+    MatButtonModule, MatCardModule, MatInputModule, MatProgressSpinnerModule, MatProgressBarModule 
     
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents : [ModalComponent]
 })
 export class AppModule { }

@@ -1,0 +1,19 @@
+<div>
+    <div>
+        <h1 mat-dialog-title>{{modal.getheader()}}</h1>
+    </div>
+    <div mat-dialog-content class="mt-3">
+        <p id="message"></p>
+    </div>
+    <div class="mt-3">
+        <mat-dialog-actions align= "end">
+            <button (click)="copylink()"  mat-stroked-button mat-dialog-close>
+                <span class="material-icons">
+                    content_copy
+                </span>
+                Copy Link
+            </button>
+        </mat-dialog-actions>
+      
+    </div>
+</div>
