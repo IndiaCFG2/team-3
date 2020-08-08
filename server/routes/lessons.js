@@ -3,36 +3,28 @@ let Lesson = require('../models/lesson.model');
 
 router.route('/').get((req, res) => {
     Lesson.find()
-        .then(lessons => res.json(lessons))
+        .then(lessons => res.json({'lessons': lessons}))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/add').post((req, res) => {
-    const name = req.body.name;
-    const description = req.body.description;
-    const board = req.body.board;
-    const type = req.body.type;
-    const subject = req.body.subject;
-    const grade = Number(req.body.grade);
-    const worksheet = Number(req.body.worksheet);
-    const division = Number(req.body.division);
-    const fileURL = req.body.fileURL;
+    
+
+    console.log(req.body);
 
     const newLesson = new Lesson({
-        name,
-        description,
-        type,
-        subject,
-        board,
-        grade,
-        worksheet,
-        division,
-        fileURL,
+        ...req.body
     });
 
     newLesson.save()
-        .then(() => res.json('Lesson added!'))
-        .catch(err => res.status(400).json('Error: ' + err));
+        .then((result) => {
+            res.json('Lesson added!')
+            console.log(result);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(400).json('Error: ' + err)
+        });
 });
 
 router.route('/:id').get((req, res) => {
