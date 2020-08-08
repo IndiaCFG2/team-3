@@ -1,0 +1,88 @@
+<div class="mt-5" *ngIf="!isLoading">
+    <mat-card>
+        <form #ng="ngForm" (ngSubmit)="submitnew(ng)">
+    
+            <mat-form-field>
+                <input matInput type="text" placeholder="Name" required ngModel name="name">
+                <mat-error>Name is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <textarea matInput type="text" placeholder="Description" required ngModel name="description"></textarea>
+                <mat-error>Description is required</mat-error>
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label >Select the type of lesson</mat-label>
+                <mat-select  name="type" ngModel>
+                    <mat-option value="hightech">High Tech</mat-option>
+                    <mat-option value="lowtech">Low Tech</mat-option>
+                </mat-select>
+                
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="text" placeholder="Board id" required ngModel name="board">
+                <mat-error>Board ID is required</mat-error>
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label >Select the subject </mat-label>
+                <mat-select  name="subject" ngModel>
+                    <mat-option value="maths">Maths</mat-option>
+                    <mat-option value="english">English</mat-option>
+                    <mat-option value="evs">EVS</mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <mat-form-field>
+                <input matInput type="number" placeholder="Grade" required ngModel name="grade">
+                <mat-error>Grade is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="number" placeholder="Worksheet" required ngModel name="worksheet">
+                <mat-error>Worksheet is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="number" placeholder="Division" required ngModel name="division">
+                <mat-error>Division is required</mat-error>
+            </mat-form-field>
+            <div *ngIf="fileurl!=''">
+                <img [src]="fileurl" height="150" width="150" alt="">
+            </div>
+            
+            <div class="mt-2">
+                <div *ngIf="upload">
+                    <input type="file" (input) = "getfile($event.target.files[0])" required name="file">
+                </div>
+                <div *ngIf="!upload">
+                    <mat-form-field>
+                        <input matInput type="text" placeholder="fileURL" required ngModel name="fileURL">
+                        <mat-error>file URL required</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-sm-4">
+                    <button type="button" (click)="upload = true" mat-stroked-button color="primary">Upload a file</button>
+                </div>
+                <div class="col-sm-4 text-center">
+                    --OR--
+                </div>
+                <div class="col-sm-4">
+                    <button  type="button" (click)="upload = false" mat-stroked-button color="primary">Paste a url</button>
+                </div>
+
+            </div>
+            
+            <div class="text-center">
+                <button type="submit" mat-stroked-button color="accent" >Submit</button>
+            </div>
+    
+        
+        </form>
+        
+    </mat-card>
+</div>
+
+<div *ngIf="isLoading">
+
+    <mat-spinner style="left: 50%;"></mat-spinner>
+    
+</div>
