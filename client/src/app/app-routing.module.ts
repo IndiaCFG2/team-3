@@ -2,15 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { pathToFileURL } from 'url';
 import { LessonComponent } from './lesson/lesson.component';
-
-<<<<<<< HEAD
-const routes: Routes = [];
-=======
+import { SchoolPagesComponent } from './school-pages/school-pages.component';
 
 const routes: Routes = [
-{ path:'lessons', component: LessonComponent }
+{ path:'lessons', component: LessonComponent },
+{ path:'school',component: SchoolPagesComponent}
 ];
->>>>>>> 93257501703b954d580864c3520b83e46e3c99b1
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
