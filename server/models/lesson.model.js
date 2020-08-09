@@ -38,10 +38,21 @@ const lessonSchema = new Schema({
     fileURL: {
         type: String,
         required: true,
+    },
+    timestamp: {
+        type: Number,
+        required: true
+    },
+    views: {
+        type: Number,
+        required: true
+    },
+    day:{
+        type: Number,
+        required: true
     }
-}, {
-    timestamps: true,
-});
+},
+);
 
 const Lesson = mongoose.model('Lesson', lessonSchema);
 

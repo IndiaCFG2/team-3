@@ -9,6 +9,9 @@ export class DataService {
 
   private filteredlessons:object[] = [];
 
+  grade:string ='';
+  subject:string ='';
+
   writelessons(incominglessons:object[]){
     this.filteredlessons = incominglessons;
   }

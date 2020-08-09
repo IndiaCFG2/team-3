@@ -39,6 +39,16 @@ router.route('/:id').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/').get((req,response)=>{
+    School.find().then((result)=>{
+
+        response.json({data: result});
+
+    }).catch((err)=>{
+        response.status(400).json({'error': err});
+    })
+})
+
 // router.route('/:id').delete((req, res) => {
 //     Exercise.findByIdAndDelete(req.params.id)
 //         .then(() => res.json('Exercise deleted.'))

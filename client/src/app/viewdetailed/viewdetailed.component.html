@@ -1,0 +1,25 @@
+<div class="mt-5">
+    <div *ngIf="!isloading">
+
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{data.name}}</mat-card-title>
+                <mat-card-subtitle>{{data.description}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <h5>Board: {{data.board}}</h5>
+                <h5>Grade: {{data.grade}}</h5>
+                <h5>Subject: {{data.subject}}</h5>
+                <button class="btn-block" type="button" mat-raised-button color="primary"><a style="text-decoration: none; color: white;" target="_blank" [href]="data.fileURL">Access this content (File)</a></button>
+            </mat-card-content>
+            
+    
+        </mat-card>
+    
+    </div>
+    
+    <div *ngIf="isloading">
+        <mat-spinner style="left: 50%;"></mat-spinner>
+    
+    </div>
+</div>

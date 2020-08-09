@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-<<<<<<< HEAD
-=======
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
->>>>>>> 2f6e173737183d45879c1ca9e12cd2e0d299c18e
 
 @Component({
   selector: 'app-school-pages',
@@ -13,13 +10,9 @@ import { DataService } from '../data.service';
 })
 export class SchoolPagesComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor(private http:HttpClient) { }
-
-  ngOnInit(): void {
-    this.http.get("http://localhost:5000/lessons").subscribe((response)=>{console.log(response)})
-=======
-  constructor(private http:HttpClient, private router: Router, private ds: DataService) { }
+  constructor(private http:HttpClient, private router: Router, private ds: DataService) { 
+    this.lessons=[];
+  }
 
   lessons:object[] = [];
 
@@ -44,11 +37,12 @@ export class SchoolPagesComponent implements OnInit {
 
       }
     }
+    this.ds.grade = a;
+    this.ds.subject = b;
     
     this.ds.writelessons(templessons);
     this.router.navigate(['/lessons']);
 
->>>>>>> 2f6e173737183d45879c1ca9e12cd2e0d299c18e
   }
 
 }
