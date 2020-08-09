@@ -49,7 +49,7 @@ const lessonSchema = new Schema({
     },
     day:{
         type: Number,
-        required: true;
+        required: true
     }
 },
 );
