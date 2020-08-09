@@ -10,7 +10,9 @@ import { DataService } from '../data.service';
 })
 export class SchoolPagesComponent implements OnInit {
 
-  constructor(private http:HttpClient, private router: Router, private ds: DataService) { }
+  constructor(private http:HttpClient, private router: Router, private ds: DataService) { 
+    this.lessons=[];
+  }
 
   lessons:object[] = [];
 
