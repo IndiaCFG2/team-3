@@ -3,6 +3,8 @@ import { DataService } from '../data.service';
 import { ModalserviceService } from '../modalservice.service';
 import { ModalComponent } from '../modal/modal.component';
 import { MatDialog } from '@angular/material';
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lesson',
@@ -11,7 +13,7 @@ import { MatDialog } from '@angular/material';
 })
 export class LessonComponent implements OnInit {
 
-  constructor(private ds: DataService, public ms: ModalserviceService, private dialog: MatDialog) { }
+  constructor(private router: Router,private ds: DataService, public ms: ModalserviceService, private dialog: MatDialog) { }
 
   lessons:object[] = [];
   grade:string = '';
@@ -35,6 +37,12 @@ export class LessonComponent implements OnInit {
     console.log(url);
     this.ms.write('Share this link', 'http://localhost:4200/detailedlesson/'+url );
     this.dialog.open(ModalComponent)
+  }
+
+  viewanalytics(url: string){
+
+    this.router.navigate(['/analytics/'+ url]);
+
   }
 
 }
