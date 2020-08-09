@@ -37,6 +37,8 @@ export class SchoolPagesComponent implements OnInit {
 
       }
     }
+    this.ds.grade = a;
+    this.ds.subject = b;
     
     this.ds.writelessons(templessons);
     this.router.navigate(['/lessons']);
