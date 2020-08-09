@@ -14,6 +14,7 @@ import { ViewdetailedComponent } from './viewdetailed/viewdetailed.component';
 import { ModalComponent } from './modal/modal.component'
 import {MatDialogModule} from '@angular/material'
 import { MatButtonModule, MatCardModule, MatInputModule, MatProgressSpinnerModule, MatProgressBarModule } from '@angular/material';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -26,7 +27,8 @@ import { MatButtonModule, MatCardModule, MatInputModule, MatProgressSpinnerModul
 
     LessonComponent,
     ViewdetailedComponent,
-    ModalComponent
+    ModalComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
