@@ -24,13 +24,28 @@ export class ViewdetailedComponent implements OnInit {
         this.data = result['data'];
         console.log(result);
 
+          let daysarray:number[] = [];
+          daysarray = result['data']['days']
+          console.log(daysarray);
+          const presentday = (new Date()).getDate();
+          const index = presentday - result['data']['createddate']
+          console.log("present day=", presentday);
+          console.log("index=", index);
+          
+
+          daysarray[index] = daysarray[index]== undefined? 1 : daysarray[index] = daysarray[index]+1;
+          
+          // for(let i=0;i<daysarray.length;i++){
+          //   if(i == index){
+          //     daysarray[i]++;
+          //   }
+          // }
           const obj={
             'timestamp': param.get('lessonid'),
             'views': this.data['views']+1,
-            'day': (new Date()).getDate()
+            'days': daysarray
           }
           this.http.put("http://localhost:5000/lessons/increamentviewcount", obj).subscribe((response)=>{
-          
         })
       })
     })

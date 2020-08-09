@@ -6,7 +6,7 @@ import { AnalyticsComponent } from './analytics/analytics.component';
 
 const routes: Routes = [
    //{path: 'admin/:id1/:id2', component: AdminComponent},
-   {path: 'analytics', component: AnalyticsComponent},
+   {path: 'analytics/:id', component: AnalyticsComponent},
     {path: 'admin', component: AdminComponent}
   
 ];

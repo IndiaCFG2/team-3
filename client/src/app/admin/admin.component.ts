@@ -54,11 +54,15 @@ export class AdminComponent implements OnInit {
     
         let task = reference.child(timestamp.toString()).put(this.file);
         this.isLoading = true;
+        const createddate = (new Date()).getDate()
+        let days:Number[] =[]
+        days.push(0);
         obj = {
           ...Form.value,
           views: 0,
-          
-          timestamp: timestamp
+          'createddate': createddate,
+          timestamp: timestamp,
+          'days': days
         }
     
         task.then((snapshot)=>{
@@ -82,10 +86,16 @@ export class AdminComponent implements OnInit {
       }
       else{
         const timestamp = Date.now();
+        const createddate = (new Date()).getDate()
+        //const createddate = 8
+        let days:Number[] =[]
+        days.push(0);
         obj = {
           ...Form.value,
           timestamp: timestamp,
           views: 0,
+          'createddate': createddate,
+          'days': days
         }
         console.log("obj=", obj);
         this.isLoading = true

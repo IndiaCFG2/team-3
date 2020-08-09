@@ -47,9 +47,13 @@ const lessonSchema = new Schema({
         type: Number,
         required: true
     },
-    day:{
+    days:{
+        type: Array,
+        required: true
+    },
+    createddate:{
         type: Number,
-        required: true;
+        required: true
     }
 },
 );
