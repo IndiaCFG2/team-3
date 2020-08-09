@@ -33,6 +33,33 @@ router.route('/:id').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.get("/getdetailedlesson/:id",(req,response)=>{
+    console.log(req.params.id)
+    Lesson.findOne({timestamp: req.params.id},(err,result)=>{
+        if(err){
+            response.status(400).json({message: 'Error'});
+
+        }
+        else{
+            response.status(200).json({message: 'ok', data: result});
+        }
+    })
+})
+
+router.put("/increamentviewcount",(req,resp)=>{
+    Lesson.updateOne({timestamp: req.body.timestamp},req.body, (err, result)=>{
+        if(err){
+            resp.status(400).json({'message': 'error occurred'});
+        }
+        else{
+            
+            if(result['n']>0)
+                resp.status(200).json({'message':'ok'});
+            else
+                resp.status(400).json({'message':'view not updated'})
+        }
+    })
+})
 // router.route('/:id').delete((req, res) => {
 //     Exercise.findByIdAndDelete(req.params.id)
 //         .then(() => res.json('Exercise deleted.'))

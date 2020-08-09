@@ -14,10 +14,14 @@ export class LessonComponent implements OnInit {
   constructor(private ds: DataService, public ms: ModalserviceService, private dialog: MatDialog) { }
 
   lessons:object[] = [];
+  grade:string = '';
+  subject:string = '';
 
   ngOnInit() {
     
     this.lessons = this.ds.getlessons();
+    this.grade = this.ds.grade;
+    this.subject = this.ds.subject;
     console.log("in lesson component",this.lessons);
   }
 
@@ -29,7 +33,7 @@ export class LessonComponent implements OnInit {
 
   showmodal(url: string){
     console.log(url);
-    this.ms.write('Share this link', url );
+    this.ms.write('Share this link', 'http://localhost:4200/detailedlesson/'+url );
     this.dialog.open(ModalComponent)
   }
 

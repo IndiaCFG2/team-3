@@ -46,6 +46,10 @@ const lessonSchema = new Schema({
     views: {
         type: Number,
         required: true
+    },
+    day:{
+        type: Number,
+        required: true;
     }
 },
 );
