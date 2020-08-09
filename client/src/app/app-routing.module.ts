@@ -6,6 +6,7 @@ import { ViewdetailedComponent } from './viewdetailed/viewdetailed.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'lessons', component: LessonComponent},
   {path: 'school', component: SchoolPagesComponent},
   {path: 'detailedlesson/:lessonid', component: ViewdetailedComponent},
